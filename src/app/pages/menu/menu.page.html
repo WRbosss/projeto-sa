@@ -1,28 +1,30 @@
-<ion-split-pane>
-  <ion-menu contentId="content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>
+<ion-menu side="start" content-id="main-content">
+  <ion-header>
+    <ion-toolbar translucent>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-icon name="mail" slot="start"></ion-icon>
+        <ion-label>Inbox</ion-label>
+      </ion-item>
 
-        </ion-title>
-      </ion-toolbar>
-    </ion-header>
+    </ion-list>
+  </ion-content>
+</ion-menu>
 
-    <ion-content>
-      <ion-list>
-        <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
-          <ion-item [routerLink]="p.url" routerDirection="foward">
-            {{p.title}}
-          </ion-item>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Inbox</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
 
-        </ion-menu-toggle>
-      </ion-list>
-
-    </ion-content>
-
-
-  </ion-menu>
-
-  <ion-router-outlet id="content" main></ion-router-outlet>
-
-</ion-split-pane>
+  </ion-content>
+</div>
