@@ -15,7 +15,6 @@ export class LoginPage implements OnInit {
 
   login_in(){
     this.router.navigate(["menu"])
-    
   }
 
 }

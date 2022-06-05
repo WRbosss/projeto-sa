@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { LoginPage } from './login.page';
+import { MenuPage } from '../menu/menu.page';
 
 const routes: Routes = [
   {
     path: 'menu', 
-    loadChildren: () => import('../menu/menu.module').then( m => m.MenuPageModule)
+    component: MenuPage
+
   },
   {
     path: 'login',

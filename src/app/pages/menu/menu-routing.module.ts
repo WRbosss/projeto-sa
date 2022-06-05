@@ -5,9 +5,10 @@ import { MenuPage } from './menu.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'menu',
     component: MenuPage
   }
+
 ];
 
 @NgModule({
