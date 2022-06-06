@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -6,17 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.page.scss'],
 })
 export class MenuPage implements OnInit {
-  pages: {title:String, url:String}[] = [
+  pages: {title:String, url:String, icon:String}[] = [
     {
-      "title": "início",
-      "url": ""
+      "title": "Salas",
+      "url": "menu",
+      "icon": "easel-outline"
     }
   ]
+  selectedPath: String
 
-
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
+  }
+
+  navigate(url:String){
+    console.log(url)
+    
+    this.router.navigate([url])
   }
 
 }

@@ -1,3 +1,16 @@
+<ion-header>
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-button>
+  </ion-buttons>
+  <ion-buttons slot="end">
+    <ion-button (click)="navigate_Cadastro_Salas()"><ion-icon name="add" slot="end" id="paddingToolbar"></ion-icon></ion-button>
+  </ion-buttons>  
+  <ion-title>Salas</ion-title>
+</ion-toolbar>
+</ion-header>
 <ion-split-pane>
   <ion-router-outlet id="content" main></ion-router-outlet>
 
@@ -6,7 +19,6 @@
       <ion-toolbar>
         <ion-title>
           Menu
-
         </ion-title>
       </ion-toolbar>
     </ion-header>
@@ -15,7 +27,8 @@
       <ion-list>
         <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
 
-          <ion-item [routerLink]="p.url" routerDirection="foward">
+          <ion-item (click)="navigate(p.url)">
+            <ion-icon [name]="p.icon" slot="start"></ion-icon>
             {{p.title}}
 
           </ion-item>
