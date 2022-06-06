@@ -6,7 +6,13 @@ import { MenuPage } from './menu.page';
 const routes: Routes = [
   {
     path: '',
-    component: MenuPage
+    component: MenuPage,
+    children:[
+      {
+        path:'menu',
+        component: MenuPage
+      }
+    ]
   }
 ];
 
