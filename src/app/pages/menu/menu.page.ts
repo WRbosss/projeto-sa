@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -15,9 +16,12 @@ export class MenuPage implements OnInit {
   ]
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
-
+  navigate_Cadastro_Salas(){
+    console.log("minha pika")
+    this.router.navigate(['cadastro-salas'])
+  }
 }
