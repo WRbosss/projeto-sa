@@ -1,4 +1,17 @@
 <ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button>
+          <ion-menu-button></ion-menu-button>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button (click)="navigate_Cadastro_Salas()"><ion-icon name="add" slot="end" id="paddingToolbar"></ion-icon></ion-button>
+      </ion-buttons>  
+      <ion-title>{{pages[activeIndex]["title"]}}</ion-title>
+    </ion-toolbar>
+    </ion-header>
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content">
       <ion-header>
@@ -11,7 +24,7 @@
       <ion-content>
         <ion-list id="inbox-list">
           <ion-menu-toggle auto-hide="false" *ngFor="let page of pages; let i = index">
-            <ion-item (click)="activeIndex = i" routerDirection="root" [routerLink]="[page.url]"
+            <ion-item (click)="index_change(i)" routerDirection="root" [routerLink]="[page.url]"
                [class.selected]="activeIndex == i">
               <ion-icon slot="start" [name]="page.icon"></ion-icon>
               <ion-label>{{ page.title }}</ion-label>

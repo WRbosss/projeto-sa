@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.page.scss'],
 })
 export class MenuPage implements OnInit {
-  active_index: number
+  activeIndex: number = 0
   pages: {title:String, url:String, icon:String}[] = [
     {
       title: 'Salas',
@@ -15,10 +15,16 @@ export class MenuPage implements OnInit {
     }
   ];
 
+  ngOnInit(): void {
+    
+  }
+
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  index_change(i:number){
+    this.activeIndex = i
 
+    console.log(this.pages[this.activeIndex])
+  }
 }
