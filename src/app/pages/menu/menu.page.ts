@@ -6,12 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.page.scss'],
 })
 export class MenuPage implements OnInit {
-  pages: {title:String, url:String}[] = [
+  active_index: number
+  pages: {title:String, url:String, icon:String}[] = [
     {
-      "title": "início",
-      "url": "outro cu"
+      title: 'Salas',
+      url: 'salas',
+      icon: 'easel-outline'
     }
-  ]
+  ];
 
 
   constructor() { }
