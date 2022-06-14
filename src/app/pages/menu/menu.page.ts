@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -12,19 +13,20 @@ export class MenuPage implements OnInit {
       title: 'Salas',
       url: 'salas',
       icon: 'easel-outline'
+    },
+    {
+      title:'Perguntas',
+      url: 'perguntas',
+      icon: 'person'
     }
   ];
 
   ngOnInit(): void {
     
   }
-
-
-  constructor() { }
+  constructor(private router: Router) { }
 
   index_change(i:number){
     this.activeIndex = i
-
-    console.log(this.pages[this.activeIndex])
   }
 }
