@@ -7,24 +7,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.page.scss'],
 })
 export class MenuPage implements OnInit {
+  activeIndex: number = 0
+
   pages: {title:String, url:String, icon:String}[] = [
     {
-      "title": "Salas",
-      "url": "menu",
-      "icon": "easel-outline"
+      title: 'Salas',
+      url: '/menu/salas',
+      icon: 'easel-outline'
+    },
+    {
+      title:'Perguntas',
+      url: '/menu/perguntas',
+      icon: 'person'
     }
-  ]
-  selectedPath: String
+  ];
 
-  constructor(private router:Router) { }
 
-  ngOnInit() {
-  }
-
-  navigate(url:String){
-    console.log(url)
+  ngOnInit(): void {
     
-    this.router.navigate([url])
   }
+  constructor(private router: Router) { }
 
+  index_change(i:number){
+    this.activeIndex = i
+  }
 }

@@ -1,43 +1,36 @@
-<ion-header>
-<ion-toolbar>
-  <ion-buttons slot="start">
-    <ion-button>
-      <ion-menu-button></ion-menu-button>
-    </ion-button>
-  </ion-buttons>
-  <ion-buttons slot="end">
-    <ion-button (click)="navigate_Cadastro_Salas()"><ion-icon name="add" slot="end" id="paddingToolbar"></ion-icon></ion-button>
-  </ion-buttons>  
-  <ion-title>Salas</ion-title>
-</ion-toolbar>
-</ion-header>
-<ion-split-pane>
-  <ion-router-outlet id="content" main></ion-router-outlet>
+<ion-app>
 
-  <ion-menu content-id="content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>
-          Menu
-        </ion-title>
-      </ion-toolbar>
-    </ion-header>
+  <ion-header>
+    <ion-toolbar>
 
-    <ion-content>
-      <ion-list>
-        <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
+      <ion-buttons slot="start">
+        <ion-button>
+          <ion-menu-button></ion-menu-button>
+        </ion-button>
+      </ion-buttons>
+      
+      <ion-title>{{pages[activeIndex]['title']}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-          <ion-item (click)="navigate(p.url)">
-            <ion-icon [name]="p.icon" slot="start"></ion-icon>
-            {{p.title}}
-
-          </ion-item>
-
-        </ion-menu-toggle>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
-
-  
-
-</ion-split-pane>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content">
+      <ion-header>
+        <ion-toolbar>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list id="inbox-list">
+          <ion-menu-toggle auto-hide="false" *ngFor="let page of pages; let i = index">
+            <ion-item (click)="index_change(i)" routerDirection="root" [routerLink]="[page.url]"
+               [class.selected]="activeIndex == i">
+              <ion-icon slot="start" [name]="page.icon"></ion-icon>
+              <ion-label>{{ page.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>
