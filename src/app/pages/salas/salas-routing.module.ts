@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PerguntasPage } from '../perguntas/perguntas.page';
+
 
 import { SalasPage } from './salas.page';
 
@@ -10,8 +10,8 @@ const routes: Routes = [
     component: SalasPage
   },
   {
-    path: 'perguntas',
-    component: PerguntasPage
+    path: 'cadastro',
+    loadChildren: () => import("../cadastro-sala/cadastro-sala.module").then( m => m.CadastroSalaPageModule)
   }
 ];
 
