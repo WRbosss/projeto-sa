@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { MenuPage } from './pages/menu/menu.page';
 
 const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'cadastro',
+    loadChildren: () => import("./pages/cadastro-sala/cadastro-sala.module").then( m => m.CadastroSalaPageModule)
   }
   
 
@@ -13,7 +16,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, {enableTracing: true, preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]
 })

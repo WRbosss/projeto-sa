@@ -14,7 +14,7 @@ export class SalasPage implements OnInit {
   }
 
   navigate_to_cadastro_sala(){
-    this.router.navigate(['/menu/salas/cadastro'])
+    this.router.navigate(['cadastro'])
 
   }
 

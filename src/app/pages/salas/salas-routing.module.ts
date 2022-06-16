@@ -8,11 +8,8 @@ const routes: Routes = [
   {
     path: '',
     component: SalasPage
-  },
-  {
-    path: 'cadastro',
-    loadChildren: () => import("../cadastro-sala/cadastro-sala.module").then( m => m.CadastroSalaPageModule)
   }
+
 ];
 
 @NgModule({

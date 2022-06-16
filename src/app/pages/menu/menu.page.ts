@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -8,6 +7,8 @@ import { Router } from '@angular/router';
 })
 export class MenuPage implements OnInit {
   activeIndex: number = 0
+
+
 
   pages: {title:String, url:String, icon:String}[] = [
     {
@@ -26,9 +27,21 @@ export class MenuPage implements OnInit {
   ngOnInit(): void {
     
   }
-  constructor(private router: Router) { }
+  constructor() { }
+
 
   index_change(i:number){
     this.activeIndex = i
+    console.log(i)
   }
+
+  ionViewWillEnter(){
+    console.log('will enter')
+  }
+  ionViewDidEnter(){console.log('did enter')}
+  ionViewWillLeave(){console.log('will leave')}
+  ionViewDidLeave(){console.log('did leave')}
+
+
+
 }
