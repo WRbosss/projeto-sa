@@ -8,18 +8,24 @@ import { Component, OnInit } from '@angular/core';
 export class MenuPage implements OnInit {
   activeIndex: number = 0
 
-
-
-  pages: {title:String, url:String, icon:String}[] = [
+  pages: {title:String, url:String, icon:String, footer:Boolean}[] = [
     {
       title: 'Salas',
       url: '/menu/salas',
-      icon: 'easel-outline'
+      icon: 'easel-outline',
+      footer: false
     },
     {
-      title:'Perguntas',
+      title:'Blocos de perguntas',
       url: '/menu/perguntas',
-      icon: 'person'
+      icon: 'person',
+      footer: false
+    },
+    {
+      title: 'Desconectar',
+      url: '/login',
+      icon: 'person',
+      footer: false
     }
   ];
 
