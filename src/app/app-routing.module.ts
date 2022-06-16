@@ -14,6 +14,7 @@ const routes: Routes = [
     path: 'banco-perguntas',
     loadChildren: () => import('./pages/banco-perguntas/banco-perguntas.module').then( m => m.BancoPerguntasPageModule)
   }
+  
 ];
 
 @NgModule({

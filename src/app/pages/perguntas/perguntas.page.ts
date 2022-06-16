@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { IonRouterOutlet, ActionSheetController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-perguntas',
@@ -8,16 +11,13 @@ import { Router } from '@angular/router';
 })
 export class PerguntasPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private modalController: ModalController, private actionSheetCtrl: ActionSheetController) { }
 
   ngOnInit() {
   }
 
   navigate_to_banco_perguntas(){
     this.router.navigate(['banco-perguntas'])
-
   }
-
-
 
 }
