@@ -1,17 +1,22 @@
-
-  <ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Classificação
-    </ion-title>
+    <ion-title>salas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-text-center">
-  <br>
-  <ion-button (click)="navigate_to_cadastro_sala()" size="default">
-    Nova sala
-  </ion-button>
+  <ion-card>
+    <img src="https://cdn.discordapp.com/attachments/707292830158159885/986774270451535972/Logo_para_Wadyr_viado.PNG" />
+    <ion-card-header>
+      <ion-card-subtitle>Periodo</ion-card-subtitle>
+      <ion-card-title>Nome</ion-card-title>
+    </ion-card-header>
+  </ion-card>
 
 </ion-content>
+<ion-fab horizontal="end" vertical="bottom" slot="fixed">
+  <ion-fab-button color="light" (click)="navigate_to_cadastro_sala()">
+    <ion-icon md="add" ios="chevron-back-circle-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 
