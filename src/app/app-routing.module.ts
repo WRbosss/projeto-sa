@@ -9,11 +9,11 @@ const routes: Routes = [
   {
     path: 'cadastro-salas',
     loadChildren: () => import("./pages/cadastro-sala/cadastro-sala.module").then( m => m.CadastroSalaPageModule)
-  },  {
+  },
+  {
     path: 'banco-perguntas',
     loadChildren: () => import('./pages/banco-perguntas/banco-perguntas.module').then( m => m.BancoPerguntasPageModule)
   }
-
 ];
 
 @NgModule({
