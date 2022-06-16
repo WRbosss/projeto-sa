@@ -12,4 +12,8 @@ export class CadastroSalaPage implements OnInit {
   ngOnInit() {
   }
 
+  ionViewWillEnter(){
+    console.log('cu')
+  }
+
 }

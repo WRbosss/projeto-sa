@@ -6,16 +6,21 @@ const routes: Routes = [
   {
     path: '',
     component: MenuPage,
-    children: [
-      {
-        path: 'perguntas',
-        loadChildren: () => import('../perguntas/perguntas.module').then( m => m.PerguntasPageModule)
-      },
-      {
-        path:'salas',
-        loadChildren: () => import("../salas/salas.module").then( m => m.SalasPageModule)
-      }
-    ],
+    children: [{
+      path: 'perguntas',
+      loadChildren: () => import('../perguntas/perguntas.module').then( m => m.PerguntasPageModule)
+    },
+    {
+      path: 'salas',
+      loadChildren: () => import("../salas/salas.module").then( m => m.SalasPageModule)
+
+    },
+    {
+      path: '',
+      redirectTo: 'salas',
+      pathMatch: 'full'
+    }
+    ]
   }
 ];
 
