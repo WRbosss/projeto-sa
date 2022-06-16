@@ -7,16 +7,18 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'cadastro',
+    path: 'cadastro-salas',
     loadChildren: () => import("./pages/cadastro-sala/cadastro-sala.module").then( m => m.CadastroSalaPageModule)
+  },  {
+    path: 'banco-perguntas',
+    loadChildren: () => import('./pages/banco-perguntas/banco-perguntas.module').then( m => m.BancoPerguntasPageModule)
   }
-  
 
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {enableTracing: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]
 })
