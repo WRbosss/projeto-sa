@@ -4,13 +4,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-text-center">
-  <ion-card *ngFor="let sala of salas">
+<ion-content [fullscreen]="true" class="">
+  <ion-card *ngFor="let sala of salas" class="grid">
     <ion-card-header>
-      <ion-card-title>{{sala.nome}}</ion-card-title>
-      <ion-card-subtitle *ngIf="sala.alunos>1; else singular">{{sala.alunos}} alunos</ion-card-subtitle>
+      <ion-card-title class="font-title">{{sala.nome}}</ion-card-title>
+      <ion-card-title class="font-subtitle">Turno</ion-card-title>
+     
+      <ion-card-title id="card-title">
+          <ion-button id="back-button">
+            <ion-icon name="caret-forward-outline" id="size-icon" size="large"></ion-icon>
+          </ion-button>
+      </ion-card-title>  
+           
+      <ion-card-subtitle *ngIf="sala.alunos>1; else singular" class="font-subtitle1" >{{sala.alunos}}/total alunos online</ion-card-subtitle>
       <ng-template #singular>
-        <ion-card-subtitle >{{sala.alunos}} aluno</ion-card-subtitle>
+        <ion-card-subtitle class="font-subtitle1">{{sala.alunos}}/ aluno online</ion-card-subtitle>
       </ng-template>
     </ion-card-header>
   </ion-card>
@@ -60,9 +68,9 @@
     </ng-template>
   </ion-modal>
 
-  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
-    <ion-fab-button color="light" id="trigger-button">
-      <ion-icon md="add" ios="chevron-back-circle-outline"></ion-icon>
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed" >
+    <ion-fab-button color="black" id="trigger-button">
+      <ion-icon md="add" ios="chevron-back-circle-outline" id="color"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>
